@@ -88,10 +88,11 @@ public class GyrosensorUtils {
                 coordinatesBean.setAnglex(anglex);
                 coordinatesBean.setAngley(angley);
                 coordinatesBean.setAnglez(anglez);
-                System.out.println("anglex------------>" + anglex);
-                System.out.println("angley------------>" + angley);
-                System.out.println("anglez------------>" + anglez);
-                System.out.println("gyroscopeSensor.getMinDelay()----------->" + gyroscopeSensor.getMinDelay());
+                //注释陀螺仪位置
+//                System.out.println("anglex------------>" + anglex);
+//                System.out.println("angley------------>" + angley);
+//                System.out.println("anglez------------>" + anglez);
+//                System.out.println("gyroscopeSensor.getMinDelay()----------->" + gyroscopeSensor.getMinDelay());
             }
             //将当前时间赋值给timestamp
             timestamp = event.timestamp;

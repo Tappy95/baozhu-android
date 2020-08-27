@@ -17,7 +17,6 @@ public class RetrofitUtils {
 //    private static String BASE_LOGIN_URL = "http://106.53.85.158:8082";   //内网
 //    public static String H5url = "";//内网
 
-
     private static String BASE_SMS_CODE_URL = "http://lottery.shouzhuan518.com/push/";   //正式
     private static String BASE_LOGIN_URL = "http://lottery.shouzhuan518.com";   //正式
     public static String H5url = "http://web.shouzhuan518.com";//正式

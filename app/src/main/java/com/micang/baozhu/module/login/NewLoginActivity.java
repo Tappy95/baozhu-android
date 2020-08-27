@@ -229,13 +229,14 @@ public class NewLoginActivity extends BaseActivity implements View.OnClickListen
                 }
                 break;
             case R.id.btn_login:
-                if (PhoneUtil.notHasLightSensorManager(this)
-                        || PhoneUtil.isFeatures()
-                        || PhoneUtil.checkIsNotRealPhone()
-                        || PhoneUtil.checkPipes()) {
-                    ToastUtils.show(this, "请用手机登录");
-                    return;
-                }
+                // 注释模拟器检测
+//                if (PhoneUtil.notHasLightSensorManager(this)
+//                        || PhoneUtil.isFeatures()
+//                        || PhoneUtil.checkIsNotRealPhone()
+//                        || PhoneUtil.checkPipes()) {
+//                    ToastUtils.show(this, "请用手机登录");
+//                    return;
+//                }
                 if (isPswLogin) {
                     new RxPermissions(NewLoginActivity.this).request(Manifest.permission.READ_PHONE_STATE, Manifest.permission.READ_CONTACTS, Manifest.permission.READ_CALL_LOG/* Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.ACCESS_FINE_LOCATION, */).subscribe(new Consumer<Boolean>() {
                         @Override

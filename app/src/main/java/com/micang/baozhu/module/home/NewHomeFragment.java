@@ -55,6 +55,7 @@ import com.micang.baozhu.module.view.CountdownView1;
 import com.micang.baozhu.module.view.DragFloatActionLayout;
 import com.micang.baozhu.module.view.NewCommonDialog;
 import com.micang.baozhu.module.web.AccountDataActivity;
+import com.micang.baozhu.module.web.AdvWebActivity;
 import com.micang.baozhu.module.web.GeneralizeActivity;
 import com.micang.baozhu.module.web.LotteryWebActivity;
 import com.micang.baozhu.module.web.NextMYGameDetailsActivity;
@@ -277,8 +278,10 @@ public class NewHomeFragment extends BaseFragment implements View.OnClickListene
                 if (EmptyUtils.isTokenEmpty(activity) || EmptyUtils.isImeiEmpty(activity)) {
                     startActivity(new Intent(activity, NewLoginActivity.class));
                 } else {
-                    getConductTask(2);
+                    //getConductTask(2);
+                    AdvWebActivity.start(activity,"游戏赚","http://u.zrb.net/Task/un0401501887080554?uid="+userId);
                 }
+                //AdvWebActivity.start(activity,"游戏赚","http://u.zrb.net/Task/un0401501887080554?uid=huangxun0452@163.com");
             }
         });
 
@@ -421,16 +424,17 @@ public class NewHomeFragment extends BaseFragment implements View.OnClickListene
                 break;
 
             case R.id.rl_gaoez:
-//                if (EmptyUtils.isTokenEmpty(activity) || EmptyUtils.isImeiEmpty(activity)) {
-//                    startActivity(new Intent(activity, NewLoginActivity.class));
-//                } else {
+                if (EmptyUtils.isTokenEmpty(activity) || EmptyUtils.isImeiEmpty(activity)) {
+                    startActivity(new Intent(activity, NewLoginActivity.class));
+                } else {
 //                    startActivity(new Intent(activity, NewTaskActivity.class));
-//                }
+                    String url = YwSDK_WebActivity.Companion.getBase_url() + YwSDK.Companion.getSupplementUrl();
+                   Log.e("跳转地址",url);
+                    YwSDK_WebActivity.Companion.openDebug(getContext(),url);
+                }
  //               YwSDK_WebActivity.Companion.open(getContext());
                 //传入广告id，直接进入广告的详情页
-                String url = YwSDK_WebActivity.Companion.getBase_url() + YwSDK.Companion.getSupplementUrl();
-//                Log.e("跳转地址",url);
-               YwSDK_WebActivity.Companion.openDebug(getContext(),url);
+
                 break;
             case R.id.rl_xyy:
                 if (EmptyUtils.isTokenEmpty(activity) || EmptyUtils.isImeiEmpty(activity)) {
@@ -439,7 +443,6 @@ public class NewHomeFragment extends BaseFragment implements View.OnClickListene
                     startActivity(new Intent(activity, BaoquGameActivity.class));
                 }
                 break;
-
             case R.id.tv_withdraw:
                 if (EmptyUtils.isTokenEmpty(activity) || EmptyUtils.isImeiEmpty(activity)) {
                     startActivity(new Intent(activity, NewLoginActivity.class));
@@ -453,8 +456,8 @@ public class NewHomeFragment extends BaseFragment implements View.OnClickListene
                 } else {
                     startActivity(new Intent(activity, AccountDataActivity.class));
                 }
-                break;
 
+                break;
             default:
                 break;
         }

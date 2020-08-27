@@ -109,13 +109,14 @@ public class BindPhoneActivity extends BaseActivity implements View.OnClickListe
                 getCode.setEnableCountDown(false);
                 break;
             case R.id.btn_login:
-                if (PhoneUtil.notHasLightSensorManager(this)
-                        || PhoneUtil.isFeatures()
-                        || PhoneUtil.checkIsNotRealPhone()
-                        || PhoneUtil.checkPipes()) {
-                    ToastUtils.show(this, "请用手机登录");
-                    return;
-                }
+                // 注释模拟器检测
+//                if (PhoneUtil.notHasLightSensorManager(this)
+//                        || PhoneUtil.isFeatures()
+//                        || PhoneUtil.checkIsNotRealPhone()
+//                        || PhoneUtil.checkPipes()) {
+//                    ToastUtils.show(this, "请用手机登录");
+//                    return;
+//                }
                 String code = etCode.getText().toString().trim();
 //                String psw = etPsw.getText().toString().trim();
                 String mobile = etPhonenumber.getText().toString().trim();
